@@ -14,6 +14,10 @@ void test_func(uint count,uint arg2,...)
    uint temp = arg2;
    va_list parg;
    va_start(parg,arg2);
+   
+   va_list parg2; //another list for saving value 
+   va_copy(parg2,parg);// save the arguments before calling va_end(parg)
+   
    while(count != 0)
    {
      printf("ARG = %d\r\n",temp);  
